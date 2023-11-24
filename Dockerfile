@@ -8,6 +8,7 @@ RUN apt-get update -y && apt-get install -y \
     vim \
     curl \
     nodejs \
+    npm \
     libicu-dev \
     libbz2-dev \
     libpng-dev \
