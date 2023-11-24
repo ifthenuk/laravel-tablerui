@@ -14,6 +14,7 @@ RUN apt-get update -y && apt-get install -y \
     libmcrypt-dev \
     libreadline-dev \
     libfreetype6-dev \
+    libonig-dev \
     g++
 
 # Clear cache
@@ -41,7 +42,14 @@ RUN echo "post_max_size=64M" >> "$PHP_INI_DIR/php.ini"
 RUN echo "max_execution_time=600" >> "$PHP_INI_DIR/php.ini"
 
 #then add extensions
-RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl
+RUN docker-php-ext-install \
+    bcmath \
+    pcntl \
+    mbstring \
+    pdo_mysql \
+    exif \
+    zip
+
 RUN docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/
 RUN docker-php-ext-install gd
 
