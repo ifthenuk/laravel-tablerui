@@ -68,12 +68,16 @@ RUN mkdir -p /home/devuser/.composer && \
 
 RUN service apache2 restart
 
-#RUN chmod a+rx ./laravel-install.sh
+EXPOSE 80
+
+# RUN chmod +x ./laravel-install.sh
 RUN chmod 755 ./laravel-install.sh
 
 RUN chmod o+w ./storage/ -R
 
-EXPOSE 80
+SHELL ["/bin/bash","-o","pipefail","-c"]
 
-ENTRYPOINT ["/bin/bash", "laravel-install.sh"]
+CMD ["/bin/bash","-c","./laravel-install.sh"]
+
+# CMD ["/bin/bash", "laravel-install.sh"]
 # CMD ["/bin/bash","-c","./laravel-install.sh"]
