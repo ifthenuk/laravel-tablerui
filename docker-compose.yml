@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+        args:
+          user: www-data
+          uid: 1000
+        context: .
+        dockerfile: Dockerfile
+    image: ifthenuk/laravel10-apache
+    container_name: laravel-apps
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www/html
+
+networks:
+    laravel:
+        driver: bridge
