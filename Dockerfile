@@ -68,7 +68,7 @@ RUN mkdir -p /home/devuser/.composer && \
 
 RUN service apache2 restart
 
-RUN chmod a+rx ./laravel-install.sh
+RUN chmod a+rx /var/www/html/laravel-install.sh
 
 EXPOSE 80
 
