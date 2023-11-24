@@ -12,7 +12,7 @@ services:
     container_name: laravel-apps
     ports:
       - "8070:80"
-    restart: unless-stopped
+    restart: always
     volumes:
       - ./:/var/www/html
 
