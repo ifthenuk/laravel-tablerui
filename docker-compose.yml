@@ -10,6 +10,8 @@ services:
         dockerfile: Dockerfile
     image: ifthenuk/laravel10-apache
     container_name: laravel-apps
+    ports:
+      - "8070:80"
     restart: unless-stopped
     volumes:
       - ./:/var/www/html
