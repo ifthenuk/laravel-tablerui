@@ -4,7 +4,10 @@ php artisan key:generate
 
 composer install --ignore-platform-reqs --no-interaction --no-plugins --no-scripts --prefer-dist
 
+php artisan migrate
+
 npm install
 
-php artisan migrate
+npm run build
+
 
