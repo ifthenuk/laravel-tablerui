@@ -7,6 +7,7 @@ RUN apt-get update -y && apt-get install -y \
     git \
     vim \
     curl \
+    nodejs \
     libicu-dev \
     libbz2-dev \
     libpng-dev \
@@ -18,6 +19,10 @@ RUN apt-get update -y && apt-get install -y \
     libonig-dev \
     libzip-dev \
     g++
+
+#install nodejs
+RUN echo "NODE Version:" && node --version
+RUN echo "NPM Version:" && npm --version
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
