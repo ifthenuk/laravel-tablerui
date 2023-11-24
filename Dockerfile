@@ -58,12 +58,12 @@ RUN docker-php-ext-install -j$(nproc) gd
 #composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-#set user
-USER devapps
+# Change current user to www
+USER www
 
-RUN useradd -G www-data,root -u 1000 -d /home/devapps devapps
-RUN mkdir -p /home/devapps/.composer && \
-    chown -R devapps:devapps /home/dev
+#set user
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
 
 RUN service apache2 restart
 
