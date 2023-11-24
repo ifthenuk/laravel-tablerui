@@ -65,7 +65,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN useradd -G www-data,root -u 1000 -d /home/devuser devuser
 RUN mkdir -p /home/devuser/.composer && \
     chown -R devuser:devuser /home/devuser \
-    chown www-data:www-data -R ./storage
+    chown devuser:devuser -R ./storage
 
 RUN service apache2 restart
 
