@@ -11,7 +11,7 @@ composer install --ignore-platform-reqs --no-interaction --no-plugins --no-scrip
 
 php artisan migrate
 
-npm install
+npm install --legacy-peer-deps
 
 npm run build
 

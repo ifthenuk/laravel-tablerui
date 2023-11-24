@@ -64,12 +64,15 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Change current user to www
 RUN useradd -G www-data,root -u 1000 -d /home/devuser devuser
 RUN mkdir -p /home/devuser/.composer && \
-    chown -R devuser:devuser /home/devuser
+    chown -R devuser:devuser /home/devuser \
+    chown www-data:www-data -R ./storage
 
 RUN service apache2 restart
 
 #RUN chmod a+rx ./laravel-install.sh
 RUN chmod 755 ./laravel-install.sh
+
+RUN chmod o+w ./storage/ -R
 
 EXPOSE 80
 
