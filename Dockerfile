@@ -68,9 +68,9 @@ RUN mkdir -p /home/devuser/.composer && \
 
 RUN service apache2 restart
 
-RUN chmod +x laravel-install.sh
+RUN chmod +x ./laravel-install.sh
 
 EXPOSE 80
 
 # ENTRYPOINT ["/bin/bash", "laravel-install.sh"]
-CMD ["/bin/bash","-c","laravel-install.sh"]
+CMD ["/bin/bash","-c","./laravel-install.sh"]
