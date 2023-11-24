@@ -15,6 +15,7 @@ RUN apt-get update -y && apt-get install -y \
     libreadline-dev \
     libfreetype6-dev \
     libonig-dev \
+    libzip-dev \
     g++
 
 # Clear cache
