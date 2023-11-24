@@ -23,10 +23,11 @@ RUN apt-get update -y && apt-get install -y \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 #copy application
+RUN cp .env.example .env
+
 WORKDIR /var/www/html
 COPY . /var/www/html
 
-RUN cp .env.example .env
 
 #apache configs + document root
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
