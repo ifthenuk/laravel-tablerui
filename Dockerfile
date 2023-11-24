@@ -76,5 +76,5 @@ RUN chmod o+w ./storage/ -R
 
 EXPOSE 80
 
-# ENTRYPOINT ["/bin/bash", "laravel-install.sh"]
+ENTRYPOINT ["/bin/bash", "laravel-install.sh"]
 # CMD ["/bin/bash","-c","./laravel-install.sh"]
