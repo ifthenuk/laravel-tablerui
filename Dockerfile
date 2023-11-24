@@ -75,8 +75,6 @@ RUN chmod 755 ./laravel-install.sh
 
 RUN chmod o+w ./storage/ -R
 
-SHELL ["/bin/bash","-o","pipefail","-c"]
-
 CMD ["/bin/bash","-c","./laravel-install.sh"]
 
 # CMD ["/bin/bash", "laravel-install.sh"]
