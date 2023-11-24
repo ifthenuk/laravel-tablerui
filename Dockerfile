@@ -27,8 +27,8 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 WORKDIR /var/www/html
 
 #copy application
+RUN cp .env.example .env
 COPY . /var/www/html
-COPY .env.example /var/www/html/.env
 
 #apache configs + document root
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
