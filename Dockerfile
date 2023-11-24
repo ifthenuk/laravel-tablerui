@@ -52,8 +52,6 @@ RUN docker-php-ext-install \
     pcntl \
     mbstring \
     pdo_mysql \
-    json \
-    xml \
     exif \
     zip
 
