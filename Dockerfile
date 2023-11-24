@@ -59,9 +59,11 @@ RUN docker-php-ext-install -j$(nproc) gd
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 #set user
-RUN useradd -G www-data,root -u $uid -d /home/$user $user
-RUN mkdir -p /home/$user/.composer && \
-    chown -R $user:$user /home/$user
+USER devapps
+
+RUN useradd -G www-data,root -u 1000 -d /home/devapps devapps
+RUN mkdir -p /home/devapps/.composer && \
+    chown -R devapps:devapps /home/dev
 
 RUN service apache2 restart
 
