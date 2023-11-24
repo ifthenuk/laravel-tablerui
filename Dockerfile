@@ -25,7 +25,6 @@ RUN apt-get update -y && apt-get install -y \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 #copy application
-RUN cp .env.example .env
 COPY . /var/www/html
 
 WORKDIR /var/www/html
