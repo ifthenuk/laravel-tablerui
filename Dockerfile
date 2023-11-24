@@ -65,4 +65,4 @@ RUN mkdir -p /home/devuser/.composer && \
 
 RUN service apache2 restart
 
-ENTRYPOINT ["/laravel-install.sh"]
+ENTRYPOINT ["/bin/bash", "laravel-install.sh"]
