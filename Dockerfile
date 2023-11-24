@@ -43,6 +43,7 @@ RUN echo "max_execution_time=600" >> "$PHP_INI_DIR/php.ini"
 #then add extensions
 RUN docker-php-ext-install \
     bcmath \
+    pcntl \
     mbstring \
     pdo_mysql \
     gd \
