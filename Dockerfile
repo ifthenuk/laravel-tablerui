@@ -52,7 +52,6 @@ RUN docker-php-ext-install \
     pcntl \
     mbstring \
     pdo_mysql \
-    tokenizer \
     json \
     xml \
     exif \
@@ -67,7 +66,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Change current user to www
 RUN useradd -G www-data,root -u 1000 -d /home/devuser devuser
 RUN mkdir -p /home/devuser/.composer && \
-    chown -R devuser:devuser /home/devuser \
+    chown -R devuser:devuser /home/devuser 
 
 RUN service apache2 restart
 
