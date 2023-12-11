@@ -1,11 +1,9 @@
 #!/bin/sh
 cp .env.example .env
 
+service apache2 restart
+
 php artisan key:generate
-
-node --version
-
-npm --version
 
 composer install --ignore-platform-reqs --no-interaction --no-plugins --no-scripts --prefer-dist
 
